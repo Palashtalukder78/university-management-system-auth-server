@@ -21,7 +21,7 @@ export default [
   {
     ignores: ['.node_modules/*'],
   },
-  eslintPluginPrettierRecommended, // ✅ correctly placed
+  eslintPluginPrettierRecommended,
   {
     files: ['**/*.js'],
     plugins: {
