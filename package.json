@@ -4,22 +4,43 @@
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:check": "eslint --ext .js,.ts",
+    "lint:fix": "eslint . --fix",
+    "prettier:fix": "prettier --write .",
+    "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "lint-prettier": "yarn prettier:fix && yarn lint:check && yarn prettier:check",
+    "prepare": "husky"
   },
   "author": "Palash Talukder",
   "license": "ISC",
   "description": "",
+  "lint-staged": {
+    "src/**/*.ts": "yarn lint-prettier"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jsdoc": "^51.0.3",
+    "eslint-plugin-prettier": "^5.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.5.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
+    "eslint": "^9.29.0",
     "express": "^5.1.0",
     "mongoose": "^8.15.1",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.34.1",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }
