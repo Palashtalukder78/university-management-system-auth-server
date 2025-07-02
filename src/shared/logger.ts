@@ -2,7 +2,7 @@
 import path from 'path'
 import { createLogger, format, transports } from 'winston'
 import DailyRotateFile from 'winston-daily-rotate-file'
-const { combine, timestamp, label, printf, prettyPrint } = format
+const { combine, timestamp, label, printf } = format
 
 //custom logg format
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -19,11 +19,9 @@ const logger = createLogger({
     label({ label: 'University Management' }),
     timestamp(),
     myFormat,
-    prettyPrint(),
   ),
   transports: [
     new transports.Console(),
-
     new DailyRotateFile({
       filename: path.join(
         process.cwd(),
