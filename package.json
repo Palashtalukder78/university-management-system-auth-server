@@ -37,6 +37,7 @@
     "dotenv": "^16.5.0",
     "eslint": "^9.29.0",
     "express": "^5.1.0",
+    "http-status": "^2.1.0",
     "mongoose": "^8.15.1",
     "ts-node": "^10.9.2",
     "typescript-eslint": "^8.34.1",
