@@ -1,0 +1,14 @@
+Requirement Analysis:
+https://docs.google.com/document/d/1X8kOM9PLnja01jIg1ImTwevUIo2FQsmwf3wRduwV7O0/edit?usp=sharing
+
+GitHub Link:
+https://github.com/Apollo-Level2-Web-Dev/university-management-auth-service/tree/UM-12-module-14
+
+
+Academic Faculty:
+https://github.com/Apollo-Level2-Web-Dev/university-management-auth-service/tree/UM-12-module-14-academic-faculty
+
+
+Academic Department:
+https://github.com/Apollo-Level2-Web-Dev/university-management-auth-service/tree/UM-12-module-14-academic-department
+
