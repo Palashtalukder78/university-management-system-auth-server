@@ -9,13 +9,14 @@ const createSemester = catchAsync(
     const { ...academicSemesterData } = req.body
     const result =
       await AcademicSemesterService.createSemester(academicSemesterData)
-    next()
+
     sendResponse(res, {
       statusCode: status.OK,
       success: true,
       message: 'Academic Semester created successfully!',
       data: result,
     })
+    next()
   },
 )
 
