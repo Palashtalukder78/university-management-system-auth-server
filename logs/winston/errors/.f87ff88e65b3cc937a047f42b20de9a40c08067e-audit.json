@@ -59,6 +59,16 @@
             "date": 1751913120947,
             "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\errors\\um-2025-07-08-00-error.log",
             "hash": "8a02a70cd776bb87280b7e670da2215ef0a7ea1e31f40c8b0b96d0b7eb26ddae"
+        },
+        {
+            "date": 1751916774335,
+            "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\errors\\um-2025-07-08-01-error.log",
+            "hash": "6ebb5231302495797aa545ffac7cd495b8d60a36acf3ec16ce85bcc01c1bd686"
+        },
+        {
+            "date": 1751918546370,
+            "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\errors\\um-2025-07-08-02-error.log",
+            "hash": "8f8f5217fce01c1ee2436accda1fe00b65978d6a0f9216a4d7f19a1968d4713e"
         }
     ],
     "hashType": "sha256"
