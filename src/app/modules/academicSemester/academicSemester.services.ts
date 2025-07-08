@@ -43,13 +43,6 @@ const getAllSemesters = async (
       })),
     })
   }
-  if (Object.keys(filtersData).length) {
-    andConditions.push({
-      $and: Object.entries(filtersData).map(([field, value]) => ({
-        [field]: value,
-      })),
-    })
-  }
 
   // const andConditions = [
   //   {
@@ -76,14 +69,27 @@ const getAllSemesters = async (
   //   },
   // ]
 
+  if (Object.keys(filtersData).length) {
+    andConditions.push({
+      $and: Object.entries(filtersData).map(([field, value]) => ({
+        [field]: value,
+      })),
+    })
+  }
+
   const { page, limit, skip, sortBy, sortOrder } =
     paginationsHelper.calculatePagination(paginationOptions)
 
   const sortConditions: { [key: string]: SortOrder } = {}
+
   if (sortBy) {
     sortConditions[sortBy] = sortOrder
   }
-  const result = await AcademicSemester.find({ $and: andConditions })
+
+  const whereConditions =
+    andConditions.length > 0 ? { $and: andConditions } : {}
+
+  const result = await AcademicSemester.find(whereConditions)
     .sort(sortConditions)
     .skip(skip)
     .limit(limit)
@@ -94,7 +100,15 @@ const getAllSemesters = async (
   }
 }
 
+const getSingleSemester = async (
+  id: string,
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findById(id)
+  return result
+}
+
 export const AcademicSemesterService = {
   createSemester,
   getAllSemesters,
+  getSingleSemester,
 }
