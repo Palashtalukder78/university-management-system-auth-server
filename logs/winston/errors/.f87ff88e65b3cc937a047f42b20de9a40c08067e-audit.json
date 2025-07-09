@@ -94,6 +94,11 @@
             "date": 1752004927765,
             "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\errors\\um-2025-07-09-02-error.log",
             "hash": "62d8b21c08713f228ac10c07d29eeafd170e45c572fd81ba80d1ec7681575304"
+        },
+        {
+            "date": 1752084413051,
+            "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\errors\\um-2025-07-10-00-error.log",
+            "hash": "7b13b299e0f020ef7e4c616555853d4d3dae7ced6bee560d26066af96f420fb9"
         }
     ],
     "hashType": "sha256"
