@@ -99,6 +99,16 @@
             "date": 1752084412966,
             "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\successes\\um-2025-07-10-00.log",
             "hash": "f72ef22cb8ad2558a53cf4d36a4cf671dcbc3ee442d27ff258d9c3544decea36"
+        },
+        {
+            "date": 1752248755564,
+            "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\successes\\um-2025-07-11-21.log",
+            "hash": "30e37b8ff77e13fa13f3aa496ae93469ffe0fa6a96625fb814fd547d1ec807bf"
+        },
+        {
+            "date": 1752249654096,
+            "name": "J:\\Level 2 - Programming hero\\university-management-system-auth-server\\logs\\winston\\successes\\um-2025-07-11-22.log",
+            "hash": "05dd8ede04f239428034ec323ff5bf16270d187cefa0a64a6ca6f43258926d4d"
         }
     ],
     "hashType": "sha256"

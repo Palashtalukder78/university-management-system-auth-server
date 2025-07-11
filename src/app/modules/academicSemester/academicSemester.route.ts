@@ -11,7 +11,16 @@ router.post(
   AcademicSemesterController.createSemester,
 )
 router.get('/:id', AcademicSemesterController.getSingleSemester)
-router.patch('/:id', AcademicSemesterController.updateSemester)
+router.patch(
+  '/:id',
+  validateRequest(AcademicValidation.updateAcademicSemesterZodSchema),
+  AcademicSemesterController.updateSemester,
+)
+
+// For Update
+// 1) Ensure 1: in route level -> Update: give me both/neither title and code
+// 2) Ensure 2: in service level -> update: mapping title and code
+
 router.get('/', AcademicSemesterController.getAllSemester)
 
 export const AcademicSemesterRoutes = router
