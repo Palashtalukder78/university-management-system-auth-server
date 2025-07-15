@@ -44,7 +44,7 @@ const getSingleSemester = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAcademicSemester>(res, {
     statusCode: status.OK,
     success: true,
-    message: 'Semester Retirieved successfully!',
+    message: 'Single Semester Retirieved successfully!',
     data: result,
   })
 })
