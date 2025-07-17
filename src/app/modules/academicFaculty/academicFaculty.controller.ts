@@ -49,8 +49,24 @@ const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const updateFaculty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const updateData = req.body
+  // if (updateData === '') {
+  //   throw new ApiError(status.BAD_REQUEST, '⚠ The title must not be empty')
+  // }
+  const result = await AcademicFacultyServices.updateFaculty(id, updateData)
+  sendResponse<IAcademicFaculty>(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Semester Updated successfully!',
+    data: result,
+  })
+})
+
 export const AcademicFacultyControllers = {
   createFaculty,
   getAllFaculties,
   getSingleFaculty,
+  updateFaculty,
 }

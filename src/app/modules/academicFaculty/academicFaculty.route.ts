@@ -6,6 +6,12 @@ const router = express.Router()
 
 router.get('/:id', AcademicFacultyControllers.getSingleFaculty)
 
+router.patch(
+  '/:id',
+  validateRequest(AcademicFacultyValidation.updateAcademicFacultyZodSchema),
+  AcademicFacultyControllers.updateFaculty,
+)
+
 //For Creating
 router.post(
   '/create-faculty',

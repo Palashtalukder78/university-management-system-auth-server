@@ -110,8 +110,31 @@ const getSingleFaculty = async (
   return result
 }
 
+const updateFaculty = async (
+  id: string,
+  payload: Partial<IAcademicFaculty>,
+): Promise<IAcademicFaculty | null> => {
+  const myTitle = payload.title
+  const isExist = await AcademicFaculty.findOne({ title: myTitle })
+  if (isExist) {
+    throw new ApiError(
+      status.BAD_REQUEST,
+      '⚠ Duplicate entry must not be acceptable',
+    )
+  }
+
+  if (!payload.title) {
+    throw new ApiError(status.BAD_REQUEST, '⚠ The title must not be empty')
+  }
+  const result = await AcademicFaculty.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  return result
+}
+
 export const AcademicFacultyServices = {
   createSemester,
   getAllFaculties,
   getSingleFaculty,
+  updateFaculty,
 }
