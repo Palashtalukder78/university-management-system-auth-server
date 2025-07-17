@@ -4,11 +4,15 @@ import { AcademicFacultyControllers } from './academicFaculty.controller'
 import { AcademicFacultyValidation } from './academicFaculty.validation'
 const router = express.Router()
 
+router.get('/:id', AcademicFacultyControllers.getSingleFaculty)
+
 //For Creating
 router.post(
   '/create-faculty',
   validateRequest(AcademicFacultyValidation.createAcademicFacultyZodSchema),
   AcademicFacultyControllers.createFaculty,
 )
+
+router.get('/', AcademicFacultyControllers.getAllFaculties)
 
 export const AcademicFacultyRoutes = router

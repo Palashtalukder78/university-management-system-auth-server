@@ -21,10 +21,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   let statusCode: number = 500
   let message: string = 'Something went wrong'
   let errorMessage: IGenericErrorMessage[] = []
-  console.log(
-    'Error from duplicate~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
-    error.code,
-  )
   if (error?.name === 'ValidationError') {
     const simplifiedError = handleValidationError(error)
     statusCode = simplifiedError.statusCode
