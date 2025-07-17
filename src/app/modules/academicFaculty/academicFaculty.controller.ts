@@ -38,7 +38,19 @@ const getAllFaculties = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const result = await AcademicFacultyServices.getSingleFaculty(id)
+  sendResponse<IAcademicFaculty>(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Single Semester Retirieved successfully!',
+    data: result,
+  })
+})
+
 export const AcademicFacultyControllers = {
   createFaculty,
   getAllFaculties,
+  getSingleFaculty,
 }
