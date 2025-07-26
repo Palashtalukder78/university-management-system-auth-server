@@ -50,8 +50,24 @@ const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const updateDepartment = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const updateData = req.body
+  const result = await AcademicDepartmentServices.updateDepartment(
+    id,
+    updateData,
+  )
+  sendResponse<IAcademicDepartment>(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Semester Updated successfully!',
+    data: result,
+  })
+})
+
 export const AcademicDepartmentControllers = {
   createDepartment,
   getAllDepartments,
   getSingleDepartment,
+  updateDepartment,
 }
