@@ -5,6 +5,8 @@ import { AcademicDepartmentValidation } from './academicDepartment.validation'
 
 const router = express.Router()
 
+router.get('/:id', AcademicDepartmentControllers.getSingleDepartment)
+
 router.get('/', AcademicDepartmentControllers.getAllDepartments)
 
 router.post(
