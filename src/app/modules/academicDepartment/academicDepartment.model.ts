@@ -27,7 +27,7 @@ const AcademicDepartmentSchema = new Schema<IAcademicDepartment>(
 )
 
 //Make model
-export const AcademicFaculty = model<
+export const AcademicDepartment = model<
   IAcademicDepartment,
   AcademicDepartmentModel
 >('AcademicDepartment', AcademicDepartmentSchema)
