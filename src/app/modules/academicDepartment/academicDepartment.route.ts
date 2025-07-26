@@ -7,6 +7,14 @@ const router = express.Router()
 
 router.get('/:id', AcademicDepartmentControllers.getSingleDepartment)
 
+router.patch(
+  '/:id',
+  validateRequest(
+    AcademicDepartmentValidation.updateAcademicDepartmentZodSchema,
+  ),
+  AcademicDepartmentControllers.updateDepartment,
+)
+
 router.get('/', AcademicDepartmentControllers.getAllDepartments)
 
 router.post(
