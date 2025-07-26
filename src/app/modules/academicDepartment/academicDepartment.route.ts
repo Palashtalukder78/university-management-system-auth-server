@@ -14,6 +14,7 @@ router.patch(
   ),
   AcademicDepartmentControllers.updateDepartment,
 )
+router.delete('/:id', AcademicDepartmentControllers.deleteDepartment)
 
 router.get('/', AcademicDepartmentControllers.getAllDepartments)
 
