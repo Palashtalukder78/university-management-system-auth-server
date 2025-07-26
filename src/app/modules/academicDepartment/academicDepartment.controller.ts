@@ -39,7 +39,19 @@ const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const result = await AcademicDepartmentServices.getSingleDepartment(id)
+  sendResponse<IAcademicDepartment>(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Single Semester Retirieved successfully!',
+    data: result,
+  })
+})
+
 export const AcademicDepartmentControllers = {
   createDepartment,
   getAllDepartments,
+  getSingleDepartment,
 }
